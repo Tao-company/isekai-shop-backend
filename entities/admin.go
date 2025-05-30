@@ -3,8 +3,8 @@ package entities
 import "time"
 
 type Admin struct {
-	ID        uint64    `gorm:"primaryKey;type:varchar(64);"`
-	Item      []Item    `gorm:"foreignKey:AdminID;references:ID;constraint:OnUpdate:CASCADE,OnDelete:SET NULL;"`
+	ID        string    `gorm:"primaryKey;type:varchar(64);"`
+	Items     []Item    `gorm:"foreignKey:AdminID;references:ID;constraint:OnUpdate:CASCADE,OnDelete:SET NULL;"`
 	Email     string    `gorm:"type:varchar(128);unique;not null;"`
 	Name      string    `gorm:"type:varchar(128);not null;"`
 	Avatar    string    `gorm:"type:varchar(256);not null;default:'';"`

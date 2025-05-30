@@ -1,9 +1,11 @@
 package entities
 
-import "time"
+import (
+	"time"
+)
 
 type Item struct {
-	ID          uint64    `gorm:"primaryKey;autoIncrement;"`
+	ID          uint64    `gorm:"primaryKey;autoIncrement"`
 	AdminID     *string   `gorm:"type:varchar(64);"`
 	Name        string    `gorm:"type:varchar(64);unique;not null;"`
 	Description string    `gorm:"type:varchar(128);not null;"`
